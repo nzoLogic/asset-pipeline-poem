@@ -50,13 +50,9 @@ vendor/                # third party libraries
 
 Each directory has a specific use case. The files you want are scattered across them. **Your goal is to find all the files and require them in the correct order!**
 
-Precompiling: to make testing easier, set the following configuration options in `config/environments/development.rb`:
+By default, Rails disables concatenation and preprocessing of assets for the development environment. This means we won't get to see Rails creating single files for us.  To change this, find the configuration line for asset debugging in `config/environments/development.rb`, and update it so that the app is NOT in assets debug mode. 
 
-- `config.assets.debug = false`
-- `config.assets.compile = false`
-
-That will make it so you don't need to run `rails assets:precompile` again each time you change a file. 
-
+Remember to run `rails assets:precompile` again each time you change a file. 
 
 
 > A solution is available in the `solution` branch.
