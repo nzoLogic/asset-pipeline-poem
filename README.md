@@ -52,7 +52,7 @@ Each directory has a specific use case. The files you want are scattered across 
 
 By default, Rails disables concatenation and preprocessing of assets for the development environment. This means we won't get to see Rails creating single files for us.  To change this, find the configuration line for asset debugging in `config/environments/development.rb`, and update it so that the app is NOT in assets debug mode. 
 
-Remember to run `rails assets:precompile` again each time you change a file. 
+Run `rails assets:precompile` again if you aren't seeing any changes or errors when you change a file. 
 
 
 > A solution is available in the `solution` branch.
@@ -62,7 +62,7 @@ Remember to run `rails assets:precompile` again each time you change a file.
 1. Note that the Bootstrap CSS and JavaScript libraries are included in `views/layouts/application.html.erb` using CDN links. Practice requiring the files through the asset pipeline instead:
 
   * Find and copy the current `bootstrap.css` URL (see `views/layouts/application.html.erb`).
-  * From the Terminal, run `curl -vs BOOTSTRAP_CSS_URL_YOU_COPIED > vendor/assets/stylesheets/bootstrap.min.css`.  Many developers use Bower to manage packages instead of manually `curl`ing and `>` in files into the correct directory, but try this way for now.
+  * From the Terminal, run `curl -vs BOOTSTRAP_CSS_URL_YOU_COPIED > vendor/assets/stylesheets/bootstrap.css`.  Many developers use Bower to manage packages instead of manually `curl`ing and `>` in files into the correct directory, but try this way for now.
   * Finally, delete the CDN link from `application.html.erb`, and `require` the new Bootstrap CSS file in your `application.css` manifest.
   * Repeat these steps for the Bootstrap JavaScript library.
   * Precompile your assets.
