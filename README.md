@@ -50,13 +50,12 @@ vendor/                # third party libraries
 
 Each directory has a specific use case. The files you want are scattered across them. **Your goal is to find all the files and require them in the correct order!**
 
-By default, Rails disables concatenation and preprocessing of assets for the development environment. This means we won't get to see Rails creating single files for us.  To change this, find the configuration line for asset debugging in `config/environments/development.rb`, and update it so that the app is NOT in assets debug mode. 
+By default, Rails disables concatenation and preprocessing of assets for the development environment. This means we won't get to see Rails creating single files for us.  To change this, find the configuration line for asset debugging in `config/environments/development.rb`, and update it so that the app is NOT in assets debug mode.
 
 
 **Debugging Tips:**
 
 - check your Terminal where your server is running
-- run `rails assets:precompile` if you aren't seeing any changes or errors when you change a file
 - use highly visible changes to check whether files are included correctly
 
 > A solution is available in the `solution` branch.
@@ -77,7 +76,7 @@ By default, Rails disables concatenation and preprocessing of assets for the dev
 
 2. Downloading the Bootstrap CSS and JavaScript files through `curl` or Bower isn't the only option to use Bootstrap with the Rails asset pipeline! You can also use the <a href="https://github.com/twbs/bootstrap-sass">bootstrap-sass gem</a>.  
   * In `application.css` and `application.js`, remove the `require` statements for Bootstrap, and use the bootstrap-sass gem instead (follow the <a href="https://github.com/twbs/bootstrap-sass#a-ruby-on-rails" >installation steps</a> in the docs).
-  * After installing bootstrap-sass, precompile your assets again.
+  * After installing bootstrap-sass, precompile your assets again with `rails assets:precompile`.
 
 
  > It's often easier to use a well-documented gem than to to work directly with the asset pipeline. Watch out for gems that haven't been updated in a while, though, or for bad interactions among gems.
