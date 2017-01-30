@@ -52,8 +52,12 @@ Each directory has a specific use case. The files you want are scattered across 
 
 By default, Rails disables concatenation and preprocessing of assets for the development environment. This means we won't get to see Rails creating single files for us.  To change this, find the configuration line for asset debugging in `config/environments/development.rb`, and update it so that the app is NOT in assets debug mode. 
 
-Run `rails assets:precompile` again if you aren't seeing any changes or errors when you change a file. 
 
+**Debugging Tips:**
+
+- check your Terminal where your server is running
+- run `rails assets:precompile` if you aren't seeing any changes or errors when you change a file
+- use highly visible changes to check whether files are included correctly
 
 > A solution is available in the `solution` branch.
 
