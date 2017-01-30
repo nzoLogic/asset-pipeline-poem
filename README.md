@@ -50,7 +50,16 @@ vendor/                # third party libraries
 
 Each directory has a specific use case. The files you want are scattered across them. **Your goal is to find all the files and require them in the correct order!**
 
-A solution is in the [solution branch](https://github.com/sf-wdi-30/asset_pipeline_poem/tree/solution).
+Precompiling: to make testing easier, set the following configuration options in `config/environments/development.rb`:
+
+- `config.assets.debug = false`
+- `config.assets.compile = false`
+
+That will make it so you don't need to run `rails assets:precompile` again each time you change a file. 
+
+
+
+> A solution is available in the `solution` branch.
 
 ## Bonus: Using Third-Party Code
 
@@ -73,4 +82,4 @@ A solution is in the [solution branch](https://github.com/sf-wdi-30/asset_pipeli
 
  > It's often easier to use a well-documented gem than to to work directly with the asset pipeline. Watch out for gems that haven't been updated in a while, though, or for bad interactions among gems.
 
- A solution for this bonus is in the [solution_bootstrap_sass branch](https://github.com/sf-wdi-30/asset_pipeline_poem/tree/solution_bootstrap_sass).
+ A solution for this bonus is in the `solution_bootstrap_sass` branch.
