@@ -1,0 +1,8 @@
+$(document).on('ready', function(){
+
+  $('body').append('<h1>Asset Pipeline Poem</h1>').click(function(){
+    console.log('clicked');
+    $('img').attr('src', '<%=asset_path("my_tiger.jpg") %>')
+  });
+
+});
